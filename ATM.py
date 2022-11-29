@@ -47,31 +47,31 @@ def display_withdraw(balance):
             return balance
         else:
             print("Non-sufficient funds")
-    if user_choice == 2:
+    elif user_choice == 2:
         if balance - 40 >= 0:
             balance -= 40
             return balance
         else:
             print("Non-sufficient funds")
-    if user_choice == 3:
+    elif user_choice == 3:
         if balance - 60 >= 0:
             balance -= 60
             return balance
         else:
             print("Non-sufficient funds")
-    if user_choice == 4:
+    elif user_choice == 4:
         if balance - 80 >= 0:
             balance -= 80
             return balance
         else:
             print("Non-sufficient funds")
-    if user_choice == 5:
+    elif user_choice == 5:
         if balance - 100 >= 0:
             balance -= 100
             return balance
         else:
             print("Non-sufficient funds")
-    if user_choice == 6:
+    elif user_choice == 6:
         try:
             amount = float(input("Enter withdrawal amount: "))
             amount = round(amount, 2)
@@ -82,9 +82,7 @@ def display_withdraw(balance):
             return balance
         else:
             print("Non-sufficient funds")
-    if user_choice == 7:
-        return balance
-    return balance
+     return balance
 
 
 def display_deposit(balance):
