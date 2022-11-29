@@ -15,10 +15,8 @@ def atm_opener():
             print(f"Pin incorrect. {pin_attempts} attempts remaining")
             assert (pin_attempts != 0), "Too many incorrect PIN attempts."
 
-
 def display_balance(balance):
     print(f"\nCurrent balance is ${balance:.2f}")
-
 
 def display_withdraw(balance):
     user_choice = -1
@@ -82,8 +80,7 @@ def display_withdraw(balance):
             return balance
         else:
             print("Non-sufficient funds")
-     return balance
-
+    return balance
 
 def display_deposit(balance):
     print("Enter deposit amount")
@@ -93,12 +90,10 @@ def display_deposit(balance):
         print("Invalid deposit input")
     return balance
 
-
 def display_exit():
     print("\nThank you for banking with Humber")
     print("Returning card...")
     exit()
-
 
 def atm_main_menu():
     user_balance = 700.00
@@ -113,29 +108,24 @@ def atm_main_menu():
             menu_choice = int(input())
         except ValueError:
             print("Enter a valid menu input")
-        if 0 < menu_choice < 5:
-            if menu_choice == 1:
-                display_balance(user_balance)
-            elif menu_choice == 2:
+        if 0 < menu_choice < 5:    
+            if menu_choice == 2:
                 user_balance = display_withdraw(user_balance)
-                display_balance(user_balance)
             elif menu_choice == 3:
                  user_balance = display_deposit(user_balance)
-                 display_balance(user_balance)
             elif menu_choice == 4:
                 display_exit()
+            if user_balance != None:
+                display_balance(user_balance)
             user_reply = input("Would you like to perform another action? (y/n) ")
             if user_reply.lower() == "n":
                 display_exit()
         else:
             print("Invalid menu option")
-     
-
-
+            
 def main():
     atm_opener()
     atm_main_menu()
-
 
 if __name__ == "__main__":
     main()
